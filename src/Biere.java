@@ -1,16 +1,17 @@
 import java.time.LocalDate;
 
 public class Biere extends Produit implements Perissable,AgeLegal{
-    private LocalDate dateRecolte;
+    private float tauxAlcool;
+    private LocalDate dateProduite;
 
-    public Biere(String nom, double prix,LocalDate dateRecolte) {
+    public Biere(String nom, double prix,float tauxAlcool) {
         super(nom, prix);
-        this.dateRecolte = dateRecolte;
+        this.tauxAlcool = tauxAlcool;
     }
 
     @Override
     public LocalDate getPeremption() {
-        return this.dateRecolte.minusMonths(5);
+        return this.dateProduite.plusMonths(5);
     }
 
     @Override
