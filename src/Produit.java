@@ -17,7 +17,7 @@ public abstract class Produit implements Achat{
         if(produit instanceof AgeLegal){
             Scanner scn = new Scanner(System.in);
             System.out.println("Rentrez votre age");
-            System.out.println(((AgeLegal) produit).estAutorise(Integer.parseInt(scn.nextLine())));
+            ((AgeLegal) produit).estAutorise(Integer.parseInt(scn.nextLine()));
         }
     }
 }

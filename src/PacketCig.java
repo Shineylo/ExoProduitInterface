@@ -9,8 +9,10 @@ public class PacketCig extends Produit implements AgeLegal{
     @Override
     public boolean estAutorise(int age) {
         if(age>=18){
+            System.out.println("Vous avez l'age");
             return true;
         }else{
+            System.out.println("Vous n'avez pas l'age");
             return false;
         }
     }

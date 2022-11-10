@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Biere jupiler = new Biere("Jupiler",1.80,5.2f);
+
+        jupiler.Acheter(jupiler);
     }
 }

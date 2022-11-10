@@ -7,6 +7,7 @@ public class Biere extends Produit implements Perissable,AgeLegal{
     public Biere(String nom, double prix,float tauxAlcool) {
         super(nom, prix);
         this.tauxAlcool = tauxAlcool;
+        this.dateProduite = LocalDate.now();
     }
 
     @Override
@@ -17,8 +18,10 @@ public class Biere extends Produit implements Perissable,AgeLegal{
     @Override
     public boolean estAutorise(int age) {
         if(age>=16){
+            System.out.println("Vous avez l'age");
             return true;
         }else{
+            System.out.println("Vous n'avez pas l'age");
             return false;
         }
     }
