@@ -9,15 +9,24 @@ public abstract class Produit implements Achat{
         this.prix = prix;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
     @Override
-    public void Acheter(Produit produit) {
-        if(produit instanceof Perissable){
-            System.out.println(((Perissable) produit).getPeremption());
+    public boolean acheter(){
+        if(this instanceof Perissable){
+            System.out.println(((Perissable) this).getPeremption());
         }
-        if(produit instanceof AgeLegal){
+        if(this instanceof AgeLegal){
             Scanner scn = new Scanner(System.in);
             System.out.println("Rentrez votre age");
-            ((AgeLegal) produit).estAutorise(Integer.parseInt(scn.nextLine()));
+            return ((AgeLegal) this).estAutorise(Integer.parseInt(scn.nextLine()));
         }
+        return false;
     }
+
+    @Override
+    public void acheter(Produit produit){}
+
 }

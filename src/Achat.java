@@ -1,4 +1,6 @@
 public interface Achat {
 
-    void Acheter(Produit produit);
+    void acheter(Produit produit);
+
+    boolean acheter();
 }
