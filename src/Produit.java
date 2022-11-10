@@ -26,7 +26,4 @@ public abstract class Produit implements Achat{
         return false;
     }
 
-    @Override
-    public void acheter(Produit produit){}
-
 }

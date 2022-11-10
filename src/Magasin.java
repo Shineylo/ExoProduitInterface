@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Magasin implements Achat{
+public class Magasin {
     private String nom;
     private HashMap<String, ArrayList<Produit>> listeProduit = new HashMap<String, ArrayList<Produit>>();
 
@@ -23,7 +23,6 @@ public class Magasin implements Achat{
         }
     }
 
-    @Override
     public void acheter(Produit produit) {
         if(this.listeProduit.containsKey(produit.getNom()) && this.listeProduit.get(produit.getNom()).size()>0){
             if(produit.acheter()) {
@@ -36,11 +35,4 @@ public class Magasin implements Achat{
             }
         }
     }
-
-    @Override
-    public boolean acheter() {
-        return false;
-    }
-
-
 }
